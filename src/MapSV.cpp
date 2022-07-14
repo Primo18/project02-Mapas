@@ -7,6 +7,8 @@ MapSV::MapSV()
 MapSV::~MapSV()
 {
 }
+// Implementing Map using Arrays ordered by keys
+// Implementing insert()
 
 void MapSV::insert(pair<string, int>)
 {

@@ -3,7 +3,7 @@
 class MapHash : public Map
 {
 private:
-    int sizeMap;
+    int mapSize;
     int capacity;
     vector<int> primes;
     pair<string, int> *hashtable;

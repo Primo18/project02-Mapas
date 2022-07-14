@@ -3,7 +3,7 @@
 class MapAVL : public Map
 {
 private:
-    int sizeMap;
+    int mapSize;
 
 public:
     MapAVL();

@@ -2,7 +2,7 @@
 
 MapHash::MapHash(int N)
 {
-    sizeMap = 0;
+    mapSize = 0;
     capacity = N / 2;
     primes = {
         11,
@@ -81,8 +81,8 @@ void MapHash::insert(pair<string, int> par)
     int k = d(s);
     int p = 0;
 
-    sizeMap++;
-    double alfa = sizeMap / (double)capacity; // Factor de carga alfa
+    mapSize++;
+    double alfa = mapSize / (double)capacity; // Factor de carga alfa
     if (alfa >= 0.5)
     {
         duplicate();
@@ -149,7 +149,7 @@ void MapHash::erase(const string &key)
         else if (hashtable[i].first == key)
         {
             hashtable[i] = {"NULL", 0};
-            sizeMap--;
+            mapSize--;
             return;
         }
         else
@@ -189,12 +189,12 @@ int MapHash::at(const string &key)
 
 int MapHash::size()
 {
-    return sizeMap;
+    return mapSize;
 }
 
 bool MapHash::empty()
 {
-    return sizeMap;
+    return mapSize;
 }
 
 void MapHash::duplicate()
