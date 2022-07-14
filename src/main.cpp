@@ -4,7 +4,7 @@
 
 int main(int argc, char const *argv[])
 {
-    int N = 10;
+    int N = 40;
     MapAVL *mapAVL = new MapAVL();
     MapHash *mapHash = new MapHash(N);
     MapSV *mapSV = new MapSV();
@@ -20,11 +20,17 @@ int main(int argc, char const *argv[])
 
     if (ifile.is_open())
     {
-        for (int i = 0; i < N; i++)
+        while (listString.size() != N)
         {
             ifile >> s;
-            listString.push_back(s);
+            // Obtener solo palabras con longitud igual a 6
+            if (s.size() == 6)
+            {
+                listString.push_back(s);
+            }
         }
+        // Mezclar aleatoriamente la lista de strings
+        random_shuffle(listString.begin(), listString.end());
         ifile.close();
     }
     else
@@ -106,6 +112,8 @@ int main(int argc, char const *argv[])
     }
     end = clock();
     erase_MapHash += (double)(end - start) / CLOCKS_PER_SEC;
+
+    mapHash->print();
 
     /*******************************   MapSV   *******************************/
     // insert()
