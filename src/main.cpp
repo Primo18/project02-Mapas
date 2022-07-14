@@ -87,6 +87,8 @@ int main(int argc, char const *argv[])
     end = clock();
     insert_MapHash += (double)(end - start) / CLOCKS_PER_SEC;
 
+    mapHash->print();
+
     // at()
     start = clock();
     for (int i = 0; i < N; i++)
