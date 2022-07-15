@@ -35,6 +35,7 @@ MapHash::~MapHash()
     delete[] hashtable;
 }
 
+// function to get the smallest prime number greater than or equal to N
 int MapHash::smallestPrime(int N)
 {
     for (int i = 0; i < primes.size(); i++)
@@ -127,6 +128,7 @@ void MapHash::insert(pair<string, int> par, pair<string, int> *hashtable)
     }
 }
 
+// function to delete an element from the map
 void MapHash::erase(const string &key)
 {
     int p = 0;
@@ -160,6 +162,7 @@ void MapHash::erase(const string &key)
     }
 }
 
+// function to find the key in the hashtable
 int MapHash::at(const string &key)
 {
     int p = 0;
@@ -197,6 +200,7 @@ bool MapHash::empty()
     return mapSize;
 }
 
+// function to duplicate the hashtable and rehash the elements
 void MapHash::duplicate()
 {
     int oldCapacity = capacity;
@@ -218,7 +222,7 @@ void MapHash::print()
     cout << "MapHash:" << endl;
     for (int i = 0; i < capacity; i++)
     {
-        if (true) //! hashtable[i].first.empty() && hashtable[i].first != "NULL"
+        if (!hashtable[i].first.empty() && hashtable[i].first != "NULL")
         {
             cout << "     "
                  << "index " << i

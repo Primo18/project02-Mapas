@@ -9,6 +9,7 @@ MapSV::~MapSV()
 {
 }
 
+// function to insert a pair into the map (key, value)
 void MapSV::insert(pair<string, int> par)
 {
     auto it = upper_bound(map.begin(), map.end(), par);
@@ -19,6 +20,7 @@ void MapSV::insert(pair<string, int> par)
     }
 }
 
+// function to delete a key from the map (key)
 void MapSV::erase(const string &key)
 {
     // binary search in the map to find the key and erase it
@@ -29,6 +31,7 @@ void MapSV::erase(const string &key)
     }
 }
 
+// function to find the value of a key in the map (key)
 int MapSV::at(const string &key)
 {
     // binary search in the map to find the key

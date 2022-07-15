@@ -4,7 +4,7 @@
 
 int main(int argc, char const *argv[])
 {
-    int N = 10;
+    int N = 1000;
     MapAVL *mapAVL = new MapAVL();
     MapHash *mapHash = new MapHash(N);
     MapSV *mapSV = new MapSV(N);
@@ -65,15 +65,11 @@ int main(int argc, char const *argv[])
     end = clock();
     insert_MapAVL += (double)(end - start) / CLOCKS_PER_SEC;
 
-    mapAVL->print();
-    cout << mapAVL->size() << endl;
-    cout << mapAVL->empty() << endl;
-
     // at()
     start = clock();
     for (int i = 0; i < N; i++)
     {
-        // mapAVL->at(listString.at(i));
+        mapAVL->at(listString.at(i));
     }
     end = clock();
     at_MapAVL += (double)(end - start) / CLOCKS_PER_SEC;
@@ -82,7 +78,7 @@ int main(int argc, char const *argv[])
     start = clock();
     for (int i = 0; i < N; i++)
     {
-        // mapAVL->erase(listString.at(i));
+        mapAVL->erase(listString.at(i));
     }
     end = clock();
     erase_MapAVL += (double)(end - start) / CLOCKS_PER_SEC;
@@ -144,6 +140,8 @@ int main(int argc, char const *argv[])
     }
     end = clock();
     erase_MapSV += (double)(end - start) / CLOCKS_PER_SEC;
+
+    /*******************************   Tiempos   *******************************/
 
     printf("\n***** Tiempo total con %d pares <string, int> *****\n\n", N);
     // MapAVL

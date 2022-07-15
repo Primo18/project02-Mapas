@@ -16,12 +16,14 @@ class MapAVL : public Map
 private:
     int mapSize;
     Node *root;
-    // Node *newNode(pair<string, int>);
-    // int height(Node *node);
-    // void rotateLeft(Node *&node);
-    // void rotateRight(Node *&node);
-    // void balance(Node *&node);
-    // void print(Node *node);
+    void deleteRecursive(Node *&node);
+    int max(int a, int b);
+    int height(Node *node);
+    void updateHeight(Node *&node);
+    void rotateLeft(Node *&node);
+    void rotateRight(Node *&node);
+    void balance(Node *&node);
+    void printInorder(Node *node);
 
 public:
     MapAVL();
