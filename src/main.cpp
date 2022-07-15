@@ -4,10 +4,10 @@
 
 int main(int argc, char const *argv[])
 {
-    int N = 40;
+    int N = 1000;
     MapAVL *mapAVL = new MapAVL();
     MapHash *mapHash = new MapHash(N);
-    MapSV *mapSV = new MapSV();
+    MapSV *mapSV = new MapSV(N);
 
     // Read dic
     ifstream ifile;
@@ -93,8 +93,6 @@ int main(int argc, char const *argv[])
     end = clock();
     insert_MapHash += (double)(end - start) / CLOCKS_PER_SEC;
 
-    mapHash->print();
-
     // at()
     start = clock();
     for (int i = 0; i < N; i++)
@@ -113,8 +111,6 @@ int main(int argc, char const *argv[])
     end = clock();
     erase_MapHash += (double)(end - start) / CLOCKS_PER_SEC;
 
-    mapHash->print();
-
     /*******************************   MapSV   *******************************/
     // insert()
     start = clock();
@@ -125,8 +121,6 @@ int main(int argc, char const *argv[])
     }
     end = clock();
     insert_MapSV += (double)(end - start) / CLOCKS_PER_SEC;
-
-    mapSV->print();
 
     // at()
     start = clock();

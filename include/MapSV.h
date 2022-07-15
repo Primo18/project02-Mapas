@@ -3,10 +3,10 @@
 class MapSV : public Map
 {
 private:
-    int mapSize;
+    vector<pair<string, int>> map;
 
 public:
-    MapSV();
+    MapSV(int N);
     ~MapSV();
 
     void insert(pair<string, int>);

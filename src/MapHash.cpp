@@ -3,7 +3,7 @@
 MapHash::MapHash(int N)
 {
     mapSize = 0;
-    capacity = N / 2;
+    capacity = N;
     primes = {
         11,
         23,
