@@ -4,7 +4,7 @@
 
 int main(int argc, char const *argv[])
 {
-    int N = 1000;
+    int N = 7000;
     MapAVL *mapAVL = new MapAVL();
     MapHash *mapHash = new MapHash(N);
     MapSV *mapSV = new MapSV(N);

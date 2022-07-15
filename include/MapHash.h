@@ -1,3 +1,6 @@
+#if !defined(MAPHASH_H)
+#define MAPHASH_H
+
 #include "Map.h"
 
 class MapHash : public Map
@@ -24,3 +27,5 @@ public:
     bool empty();
     void print();
 };
+
+#endif // MAPHASH_H

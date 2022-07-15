@@ -1,3 +1,6 @@
+#if !defined(MAPSV_H)
+#define MAPSV_H
+
 #include "Map.h"
 
 class MapSV : public Map
@@ -16,3 +19,5 @@ public:
     bool empty();
     void print();
 };
+
+#endif // MAPSV_H

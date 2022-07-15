@@ -1,3 +1,6 @@
+#if !defined(MAPAVL_H)
+#define MAPAVL_H
+
 #include "Map.h"
 
 class Node
@@ -36,3 +39,5 @@ public:
     bool empty();
     void print();
 };
+
+#endif // MAPAVL_H
