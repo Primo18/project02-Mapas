@@ -4,7 +4,7 @@
 
 int main(int argc, char const *argv[])
 {
-    int N = 1000;
+    int N = 10;
     MapAVL *mapAVL = new MapAVL();
     MapHash *mapHash = new MapHash(N);
     MapSV *mapSV = new MapSV(N);
@@ -17,6 +17,7 @@ int main(int argc, char const *argv[])
     clock_t end;
     vector<string> listString;
     int randNum;
+    cout << boolalpha;
 
     if (ifile.is_open())
     {
@@ -64,11 +65,15 @@ int main(int argc, char const *argv[])
     end = clock();
     insert_MapAVL += (double)(end - start) / CLOCKS_PER_SEC;
 
+    mapAVL->print();
+    cout << mapAVL->size() << endl;
+    cout << mapAVL->empty() << endl;
+
     // at()
     start = clock();
     for (int i = 0; i < N; i++)
     {
-        mapAVL->at(listString.at(i));
+        // mapAVL->at(listString.at(i));
     }
     end = clock();
     at_MapAVL += (double)(end - start) / CLOCKS_PER_SEC;
@@ -77,7 +82,7 @@ int main(int argc, char const *argv[])
     start = clock();
     for (int i = 0; i < N; i++)
     {
-        mapAVL->erase(listString.at(i));
+        // mapAVL->erase(listString.at(i));
     }
     end = clock();
     erase_MapAVL += (double)(end - start) / CLOCKS_PER_SEC;
